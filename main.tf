@@ -1,22 +1,22 @@
 locals {
   input = {
     org = {
-      org_name       = lower(trim(replace(var.id_org_name, "/([^0-9A-Za-z])/", "_"), "_"))
-      org_name_short = lower(trim(replace(var.id_org_name_short, "/([^0-9A-Za-z])/", "_"), "_"))
-      org_name_tld   = lower(trim(replace(var.id_org_name_tld, "/([^0-9A-Za-z])/", "_"), "_"))
+      org_name       = lower(trim(replace(var.org, "/([^0-9A-Za-z])/", "_"), "_"))
+      org_name_short = lower(trim(replace(var.org_short, "/([^0-9A-Za-z])/", "_"), "_"))
+      org_name_tld   = lower(trim(replace(var.org_tld, "/([^0-9A-Za-z])/", "_"), "_"))
     }
     id = {
       # Setting Values
-      namespace = lower(trim(replace(var.id_namespace, "/([^0-9A-Za-z])/", "_"), "_"))
-      layer     = lower(trim(replace(var.id_layer, "/([^0-9A-Za-z])/", "_"), "_"))
-      stage     = lower(trim(replace(var.id_stage, "/([^0-9A-Za-z])/", "_"), "_"))
-      name      = lower(trim(replace(var.id_name, "/([^0-9A-Za-z])/", "_"), "_"))
-      component = lower(trim(replace(var.id_component, "/([^0-9A-Za-z])/", "_"), "_"))
+      namespace = lower(trim(replace(var.namespace, "/([^0-9A-Za-z])/", "_"), "_"))
+      layer     = lower(trim(replace(var.layer, "/([^0-9A-Za-z])/", "_"), "_"))
+      stage     = lower(trim(replace(var.stage, "/([^0-9A-Za-z])/", "_"), "_"))
+      name      = lower(trim(replace(var.name, "/([^0-9A-Za-z])/", "_"), "_"))
+      component = lower(trim(replace(var.component, "/([^0-9A-Za-z])/", "_"), "_"))
     }
     topology = {
       # Setting Values
-      region = lower(trim(replace(var.topology_region, "/([^0-9A-Za-z])/", "_"), "_"))
-      zone   = lower(trim(replace(var.topology_zone, "/([^0-9A-Za-z])/", "_"), "_"))
+      region = lower(trim(replace(var.region, "/([^0-9A-Za-z])/", "_"), "_"))
+      zone   = lower(trim(replace(var.zone, "/([^0-9A-Za-z])/", "_"), "_"))
     }
     managed_by = {
       # Setting Values
