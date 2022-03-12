@@ -22,6 +22,9 @@ version-resolver:
   default: 'patch'
 
 categories:
+- title: '🚀 Major / Breaking Changes'
+  labels:
+  - 'major'
 - title: '🚀 Enhancements'
   labels:
   - 'enhancement'
@@ -38,20 +41,18 @@ categories:
   - 'auto-update'
 - title: '📝 Documentation'
   labels:
-    - 'chore'
+    - 'docs'
 
 autolabeler:
-  - label: 'chore'
+  - label: 'docs'
     files:
       - '*.md'
+
   - label: 'enhancement'
     title: '/enhancement/i'
 
-  - label: 'bugfix'
-    title: '/bugfix/i'
-
   - label: 'bug'
-    title: '/🐛|🐞/i'
+    title: '/🐛|🐞|fixes/i'
 
   - label: 'auto-update'
     title: '/🤖/i'
@@ -59,22 +60,12 @@ autolabeler:
   - label: 'feature'
     title: '/🚀|🎉/i'
 
-change-template: |
-  <details>
-    <summary>$TITLE @$AUTHOR (#$NUMBER)</summary>
+  - label: 'major'
+    title: '/major|breaking change/i'
 
-    $BODY
-  </details>
+change-template: '- $TITLE (#$NUMBER)'
 
 template: |
-  ## Changes
-
+  # What's Changed
   $CHANGES
-
-replacers:
-# Remove irrelevant information from Renovate bot
-- search: '/(?<=---\s+)+^#.*(Renovate configuration|Configuration)(?:.|\n)*?This PR has been generated .*/gm'
-  replace: ''
-# Remove Renovate bot banner image
-- search: '/\[!\[[^\]]*Renovate\][^\]]*\](\([^)]*\))?\s*\n+/gm'
-  replace: ''
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
