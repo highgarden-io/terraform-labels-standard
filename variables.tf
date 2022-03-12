@@ -1,28 +1,34 @@
 variable "org" {
   type        = string
   description = "The Organization Name"
-  default = "highgarden"
+  default     = "highgarden"
 }
 variable "org_short" {
   type        = string
   description = "Short Organization Name used for naming resources."
-  default = "h8n"
+  default     = "h8n"
   validation {
-    condition = length(var.org_short) <= 6 && length(var.org_short) >= 2
+    condition     = length(var.org_short) <= 6 && length(var.org_short) >= 2
     error_message = "Organization Short name must be between 2 and 6 characters, as it is part of ID 63 char limit."
   }
 }
 variable "org_tld" {
   type        = string
   description = "Organization TLD used to generate standard labels keys."
-  default = "io"
+  default     = "io"
+}
+
+variable "id_label_keyname" {
+  type        = string
+  description = "Extra Label with the ID Value (e.g 'Name' for AWS)"
+  default     = "Name"
 }
 
 variable "layer" {
   type        = string
   description = "Infrastructure layer of the resources, used to generate resource ID."
   validation {
-    condition = length(var.layer) <= 6 && length(var.layer) >= 2
+    condition     = length(var.layer) <= 6 && length(var.layer) >= 2
     error_message = "Infrastructure Layer name must be between 2 and 6 characters, as it is part of ID 63 char limit."
   }
 }
@@ -30,9 +36,9 @@ variable "layer" {
 variable "namespace" {
   type        = string
   description = "Namespace of generate resources, used to group resources of a team/sub-organization."
-  default = "main"
+  default     = "main"
   validation {
-    condition = length(var.namespace) <= 6 && length(var.namespace) >= 2
+    condition     = length(var.namespace) <= 6 && length(var.namespace) >= 2
     error_message = "Namespace must be between 2 and 6 characters, as it is part of ID 63 char limit."
   }
 }
@@ -40,7 +46,7 @@ variable "stage" {
   type        = string
   description = "Stage of the resources, such as dev, test, prod, etc."
   validation {
-    condition = length(var.stage) <= 6 && length(var.stage) >= 2
+    condition     = length(var.stage) <= 6 && length(var.stage) >= 2
     error_message = "Stage name must be between 2 and 6 characters, as it is part of ID 63 char limit."
   }
 }
@@ -48,14 +54,14 @@ variable "name" {
   type        = string
   description = "Name of the resources, used to generate resource ID."
   validation {
-    condition = length(var.name) <= 6
+    condition     = length(var.name) <= 6
     error_message = "Name must be between 2 and 6 characters, as it is part of ID 63 char limit."
   }
 }
 variable "component" {
   type        = string
   description = "Sub-component of the resources, used to generate resource ID. (optional)"
-  default = ""
+  default     = ""
 }
 variable "region" {
   type        = string
@@ -65,7 +71,7 @@ variable "region" {
 variable "zone" {
   type        = string
   description = "Zone of the resources if applicable. (optional)"
-  default = ""
+  default     = ""
 }
 
 variable "managed_by" {
