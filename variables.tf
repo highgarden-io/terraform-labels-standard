@@ -18,6 +18,12 @@ variable "org_tld" {
   default     = "io"
 }
 
+variable "id_label_enabled" {
+  type        = bool
+  description = "Extra Label with the ID Value (e.g 'Name' for AWS)"
+  default     = true
+}
+
 variable "id_label_keyname" {
   type        = string
   description = "Extra Label with the ID Value (e.g 'Name' for AWS)"

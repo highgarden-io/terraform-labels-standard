@@ -53,12 +53,14 @@ locals {
     if value != ""
     },
     {
-      # For AWS Console ( TODO make this configurable to be more cloud provider agnostic )
-      (var.id_label_keyname)             = local.id
       "${local.label_id_postfix}/id"     = local.id
       "${local.label_id_postfix}/org"    = local.input.org.org_name_short
       "${local.label_id_postfix}/region" = local.input.topology.region
-    }
+    },
+    var.id_label_enabled ? {
+      (var.id_label_keyname) = local.id
+    } : {}
+
   )
 
   # Topology Labels

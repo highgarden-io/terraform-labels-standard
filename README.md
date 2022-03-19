@@ -29,6 +29,7 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_component"></a> [component](#input\_component) | Sub-component of the resources, used to generate resource ID. (optional) | `string` | `""` | no |
+| <a name="input_id_label_enabled"></a> [id\_label\_enabled](#input\_id\_label\_enabled) | Extra Label with the ID Value (e.g 'Name' for AWS) | `bool` | `true` | no |
 | <a name="input_id_label_keyname"></a> [id\_label\_keyname](#input\_id\_label\_keyname) | Extra Label with the ID Value (e.g 'Name' for AWS) | `string` | `"Name"` | no |
 | <a name="input_layer"></a> [layer](#input\_layer) | Infrastructure layer of the resources, used to generate resource ID. | `string` | n/a | yes |
 | <a name="input_managed_by"></a> [managed\_by](#input\_managed\_by) | Name of the component that manages the resources. ( default to 'Terraform', possible values can be other IAC Tools if not managed by Terraform) | `string` | `"terraform"` | no |
